@@ -1,0 +1,50 @@
+body
+{
+    background-color: powderblue;
+    font: 300;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.tabla
+{
+    text-align: center;
+    width: 100%;
+}
+
+img
+{
+    width: 30%;
+    height: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3cm;
+    border-color: black;
+    border-radius: 10%;
+}
+
+.szoveg
+{
+    font-weight: normal;
+    font-style: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.cim
+{
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+}
+.kep
+{
+    width: 30%;
+    height: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3cm;
+    border-color: black;
+    border-radius: 10%;
+}
