@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ZF440N_orarend>
+
+    <ora id="1" tipus="elmelet">
+        <targy> Valószínűség számítás </targy>
+        <idopont>
+            <nap> Hétfő </nap>
+            <tol> 10:00 </tol>
+            <ig>  12:00 </ig>
+        </idopont>
+        <helyszin> A1/310 </helyszin>
+        <oktato> Fegyverneki Sándor </oktato>
+        <szak> Programtervező Informatikus </szak>
+    </ora>
+
+    <ora id="2" tipus="elmelet">
+        <targy> WEB-Technológiák </targy>
+        <idopont>
+            <nap> Hétfő </nap>
+            <tol> 14:00 </tol>
+            <ig>  16:00 </ig>
+        </idopont>
+        <helyszin> XXX </helyszin>
+        <oktato> Agárdi Anita </oktato>
+        <szak> Programtervező Informatikus </szak>
+    </ora>
+
+    <ora id="3" tipus="gyakorlat">
+        <targy> WEB-Technológiák </targy>
+        <idopont>
+            <nap> Hétfő </nap>
+            <tol> 16:00 </tol>
+            <ig>  18:00 </ig>
+        </idopont>
+        <helyszin> XXX </helyszin>
+        <oktato> Agárdi Anita </oktato>
+        <szak> Programtervező Informatikus </szak>
+    </ora>
+
+
+    <ora id="4" tipus="elmelet">
+        <targy> Mesterséges Intelligencia </targy>
+        <idopont>
+            <nap> Kedd </nap>
+            <tol> 10:00 </tol>
+            <ig>  12:00 </ig>
+        </idopont>
+        <helyszin> XXX </helyszin>
+        <oktato> Fazekas Levente </oktato>
+        <szak> Programtervező Informatikus </szak>
+    </ora>
+
+    <ora id="5" tipus="elmelet">
+        <targy> Adatkezelés XML-ben </targy>
+        <idopont>
+            <nap> kedd </nap>
+            <tol> 12:00 </tol>
+            <ig>  14:00 </ig>
+        </idopont>
+        <helyszin> XXX </helyszin>
+        <oktato> Bednarik László </oktato>
+        <szak> Programtervező Informatikus </szak>
+    </ora>
+
+    <ora id="6" tipus="elmelet">
+        <targy> Algoritmusok és vizsgálatuk </targy>
+        <idopont>
+            <nap> kedd </nap>
+            <tol> 14:00 </tol>
+            <ig>  18:00 </ig>
+        </idopont>
+        <helyszin> XXX </helyszin>
+        <oktato> Házy Attila </oktato>
+        <szak> Programtervező Informatikus </szak>
+    </ora>
+
+    <ora id="6" tipus="gyakorlat">
+        <targy> Adatkezelés XML-ben </targy>
+        <idopont>
+            <nap> szerda </nap>
+            <tol> 12:00 </tol>
+            <ig>  14:00 </ig>
+        </idopont>
+        <helyszin> XXX </helyszin>
+        <oktato> Bednarik László </oktato>
+        <szak> Programtervező Informatikus </szak>
+    </ora>
+
+    <ora id="7" tipus="gyakorlat">
+        <targy> Mesterséges Intelligencia </targy>
+        <idopont>
+            <nap> csütörtök </nap>
+            <tol> 10:00 </tol>
+            <ig>  12:00 </ig>
+        </idopont>
+        <helyszin> XXX </helyszin>
+        <oktato> Fazekas Levente</oktato>
+        <szak> Programtervező Informatikus </szak>
+    </ora>
+
+</ZF440N_orarend>
