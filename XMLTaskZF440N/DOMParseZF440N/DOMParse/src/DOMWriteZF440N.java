@@ -30,10 +30,7 @@ public class DOMWriteZF440N {
     }
 
     private static void modifyDocument(Document doc) {
-        // Implement your modifications here
-        // For example, you can add, remove, or update elements and attributes
 
-        // Example: Add a new element under the "Tanar" element
         Element tanarElement = (Element) doc.getElementsByTagName("Tanar").item(0);
         Element newElement = doc.createElement("NewElement");
         newElement.appendChild(doc.createTextNode("New Element Content"));
