@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Egyszerű típusok -->
+    <xs:element name="Iskoa_ZF440N">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Tanar" type="TanarType"/>
+                <xs:element name="Tanit" type="TanitType"/>
+                <xs:element name="Osztaly" type="OsztalyType"/>
+                <xs:element name="Tantargy" type="TantargyType"/>
+                <xs:element name="Tankonyv" type="TankonyvType"/>
+                <xs:element name="Diak" type="DiakType"/>
+                <xs:element name="Tanul" type="TanulType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="TanarType">
+        <xs:sequence>
+            <xs:element name="nev" type="NevType"/>
+            <xs:element name="lakcim" type="CimType"/>
+            <xs:element name="szulido" type="DatumType"/>
+            <xs:element name="telefon" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TanitType">
+        <xs:sequence>
+            <xs:element name="szint" type="xs:string"/>
+            <xs:element name="miota" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OsztalyType">
+        <xs:sequence>
+            <xs:element name="letszam" type="xs:integer"/>
+            <xs:element name="tagozat" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TantargyType">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TankonyvType">
+        <xs:sequence>
+            <xs:element name="cim" type="xs:string"/>
+            <xs:element name="iro" type="xs:string"/>
+            <xs:element name="kiado" type="xs:string"/>
+            <xs:element name="kiadido" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DiakType">
+        <xs:sequence>
+            <xs:element name="nev" type="NevType"/>
+            <xs:element name="lakcim" type="CimType"/>
+            <xs:element name="szulido" type="DatumType"/>
+            <xs:element name="anyjaneve" type="xs:string"/>
+            <xs:element name="kor" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TanulType">
+        <xs:sequence>
+            <xs:element name="erdemjegy" type="xs:string"/>
+            <xs:element name="datum" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="NevType">
+        <xs:sequence>
+            <xs:element name="vnev" type="xs:string"/>
+            <xs:element name="knev" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CimType">
+        <xs:sequence>
+            <xs:element name="irsz" type="xs:string"/>
+            <xs:element name="varos" type="xs:string"/>
+            <xs:element name="utca" type="xs:string"/>
+            <xs:element name="hsz" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DatumType">
+        <xs:sequence>
+            <xs:element name="ev" type="xs:integer"/>
+            <xs:element name="ho" type="xs:integer"/>
+            <xs:element name="nap" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

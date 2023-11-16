@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Iskoa_ZF440N xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemaZF440N.xsd">
+
+  <Tanar>
+    <nev>
+      <vnev>Kovács</vnev>
+      <knev>Anna</knev>
+    </nev>
+    <lakcim>
+      <irsz>1024</irsz>
+      <varos>Budapest</varos>
+      <utca>Kossuth utca</utca>
+      <hsz>5</hsz>
+    </lakcim> 
+    <szulido>
+      <ev>1985</ev>
+      <ho>3</ho>
+      <nap>10</nap>
+    </szulido>
+    <telefon>123456789</telefon>    
+  <NewElement>New Element Content</NewElement>
+</Tanar>
+
+  <Tanit>
+    <szint>közép</szint>
+    <miota>2015</miota>
+  </Tanit>
+
+  <Osztaly>
+    <letszam>30</letszam>
+    <tagozat>Matematika</tagozat>
+  </Osztaly>
+
+  <Tantargy>
+    <nev>Magyar nyelv és irodalom</nev>
+  </Tantargy>
+
+  <Tankonyv>
+    <cim>Az elveszett idő nyomában</cim>
+    <iro>József Attila</iro>
+    <kiado>Könyvkiadó Kft.</kiado>
+    <kiadido>2022-09-01</kiadido>
+  </Tankonyv>
+
+  <Diak>
+    <nev>
+      <vnev>Péter</vnev>
+      <knev>Nagy</knev>
+    </nev>
+    <lakcim>
+      <irsz>1111</irsz>
+      <varos>Szeged</varos>
+      <utca>Petőfi utca</utca>
+      <hsz>15</hsz>
+    </lakcim> 
+    <szulido>
+      <ev>2005</ev>
+      <ho>7</ho>
+      <nap>5</nap>
+    </szulido>
+    <anyjaneve>Nagy Mária</anyjaneve>
+    <kor>18</kor>    
+  </Diak>
+
+  <Tanul>
+    <erdemjegy>4</erdemjegy>
+    <datum>2023-11-15</datum>
+  </Tanul>
+
+ </Iskoa_ZF440N>
