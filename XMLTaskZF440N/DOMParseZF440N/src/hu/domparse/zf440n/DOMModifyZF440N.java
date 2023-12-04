@@ -24,7 +24,7 @@ public class DOMModifyZF440N {
             modifyKiado(doc, "1", "NewPublisher");
 
             // Visszaírás az XML fájlba
-            writeDocumentToFile(doc, "XMLZF440N_output.xml");
+            writeDocumentToFile(doc, "E:\\ZF440N_XMLGyak\\XMLTaskZF440N\\XMLZF440N.xml");
         } catch (Exception e) {
             e.printStackTrace();
         }
