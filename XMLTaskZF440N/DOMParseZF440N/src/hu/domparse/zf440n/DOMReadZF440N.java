@@ -2,6 +2,9 @@ package hu.domparse.zf440n;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -13,7 +16,7 @@ import org.xml.sax.SAXException;
 
 public class DOMReadZF440N {
 
-    private static final String FILE_NAME = "E:\\ZF440N_XMLGyak\\XMLTaskZF440N\\XMLZF440N.xml";
+    private static final String FILE_NAME = "XMLZF440N.xml";
 
     public static void main(String[] args) {
         try {
@@ -50,43 +53,55 @@ public class DOMReadZF440N {
         }
     }
 
-    private static void readTanar(Document document) {
-        NodeList tanarList = document.getElementsByTagName("Tanar");
-        for (int temp = 0; temp < tanarList.getLength(); temp++) {
-            Node node = tanarList.item(temp);
-            if (node.getNodeType() == Node.ELEMENT_NODE) {
-                Element eElement = (Element) node;
-                // Extract the necessary information from the new XML structure
-                String vnev = eElement.getElementsByTagName("vnev").item(0).getTextContent();
-                String knev = eElement.getElementsByTagName("knev").item(0).getTextContent();
-                String irsz = eElement.getElementsByTagName("irsz").item(0).getTextContent();
-                String varos = eElement.getElementsByTagName("varos").item(0).getTextContent();
-                String utca = eElement.getElementsByTagName("utca").item(0).getTextContent();
-                String hsz = eElement.getElementsByTagName("hsz").item(0).getTextContent();
-                String ev = eElement.getElementsByTagName("ev").item(0).getTextContent();
-                String ho = eElement.getElementsByTagName("ho").item(0).getTextContent();
-                String nap = eElement.getElementsByTagName("nap").item(0).getTextContent();
-                String telefon = eElement.getElementsByTagName("telefon").item(0).getTextContent();
-
-                // Print the extracted information
-                System.out.println("    <Tanar>");
-                printElement("nev", vnev + " " + knev);
-                System.out.println("        <lakcim>");
-                printElement("irsz", irsz);
-                printElement("varos", varos);
-                printElement("utca", utca);
-                printElement("hsz", hsz);
-                System.out.println("        </lakcim>");
-                System.out.println("        <szulido>");
-                printElement("ev", ev);
-                printElement("ho", ho);
-                printElement("nap", nap);
-                System.out.println("        </szulido>");
-                printElement("telefon", telefon);
-                System.out.println("    </Tanar>");
+private static void readTanar(Document document) {
+    NodeList tanarList = document.getElementsByTagName("Tanar");
+    for (int temp = 0; temp < tanarList.getLength(); temp++) {
+        Node node = tanarList.item(temp);
+        if (node.getNodeType() == Node.ELEMENT_NODE) {
+            Element eElement = (Element) node;
+            // Extract the necessary information from the new XML structure
+            String vnev = eElement.getElementsByTagName("vnev").item(0).getTextContent();
+            String knev = eElement.getElementsByTagName("knev").item(0).getTextContent();
+            String irsz = eElement.getElementsByTagName("irsz").item(0).getTextContent();
+            String varos = eElement.getElementsByTagName("varos").item(0).getTextContent();
+            String utca = eElement.getElementsByTagName("utca").item(0).getTextContent();
+            String hsz = eElement.getElementsByTagName("hsz").item(0).getTextContent();
+            String ev = eElement.getElementsByTagName("ev").item(0).getTextContent();
+            String ho = eElement.getElementsByTagName("ho").item(0).getTextContent();
+            String nap = eElement.getElementsByTagName("nap").item(0).getTextContent();
+            
+            // Extract telephone numbers
+            NodeList telefonList = eElement.getElementsByTagName("telefon");
+            List<String> telefonok = new ArrayList<>();
+            for (int i = 0; i < telefonList.getLength(); i++) {
+                telefonok.add(telefonList.item(i).getTextContent());
             }
+
+            // Print the extracted information
+            System.out.println("    <Tanar>");
+            printElement("nev", vnev + " " + knev);
+            System.out.println("        <lakcim>");
+            printElement("irsz", irsz);
+            printElement("varos", varos);
+            printElement("utca", utca);
+            printElement("hsz", hsz);
+            System.out.println("        </lakcim>");
+            System.out.println("        <szulido>");
+            printElement("ev", ev);
+            printElement("ho", ho);
+            printElement("nap", nap);
+            System.out.println("        </szulido>");
+            
+            // Print telephone numbers
+            for (String telefon : telefonok) {
+                printElement("telefon", telefon);
+            }
+
+            System.out.println("    </Tanar>");
         }
     }
+}
+
 
     private static void readTanit(Document document) {
         NodeList tanitList = document.getElementsByTagName("Tanit");

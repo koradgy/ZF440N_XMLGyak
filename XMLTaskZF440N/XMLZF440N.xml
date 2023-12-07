@@ -2,123 +2,136 @@
 <Iskola_ZF440N xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:noNamespaceSchemaLocation="XMLSchemaZF440N.xsd">
 
-
   <!--Tanárok-->
 
   <Tanar tanarID="1">
     <nev>
-      <vnev>Kovács</vnev>
-      <knev>Anna</knev>
+        <vnev>Kovács</vnev>
+        <knev>Anna</knev>
     </nev>
     <lakcim>
-      <irsz>1024</irsz>
-      <varos>Budapest</varos>
-      <utca>Kossuth utca</utca>
-      <hsz>5</hsz>
-    </lakcim> 
+        <irsz>1024</irsz>
+        <varos>Budapest</varos>
+        <utca>Kossuth utca</utca>
+        <hsz>5</hsz>
+    </lakcim>
     <szulido>
-      <ev>1985</ev>
-      <ho>3</ho>
-      <nap>10</nap>
+        <ev>1985</ev>
+        <ho>3</ho>
+        <nap>10</nap>
     </szulido>
-    <telefon>123456789</telefon>    
-  </Tanar>
+    <telefonok>
+        <telefon>123456789</telefon>
+        <telefon>987654321</telefon>
+    </telefonok>
+</Tanar>
+
+<Tanar tanarID="2">
+    <nev>
+        <vnev>Szabó</vnev>
+        <knev>Péter</knev>
+    </nev>
+    <lakcim>
+        <irsz>1132</irsz>
+        <varos>Budapest</varos>
+        <utca>Alkotás utca</utca>
+        <hsz>12</hsz>
+    </lakcim>
+    <szulido>
+        <ev>1978</ev>
+        <ho>6</ho>
+        <nap>25</nap>
+    </szulido>
+    <telefonok>
+      <telefon>987654321</telefon>
+    </telefonok>
+</Tanar>
+
+<Tanar tanarID="3">
+    <nev>
+        <vnev>Király</vnev>
+        <knev>Mária</knev>
+    </nev>
+    <lakcim>
+        <irsz>1098</irsz>
+        <varos>Budapest</varos>
+        <utca>Szent István utca</utca>
+        <hsz>8</hsz>
+    </lakcim>
+    <szulido>
+        <ev>1990</ev>
+        <ho>12</ho>
+        <nap>15</nap>
+    </szulido>
+    <telefonok>
+      <telefon>555444333</telefon>
+    </telefonok>
+</Tanar>
+
+<Tanar tanarID="4">
+    <nev>
+        <vnev>Nagy</vnev>
+        <knev>Gábor</knev>
+    </nev>
+    <lakcim>
+        <irsz>1145</irsz>
+        <varos>Budapest</varos>
+        <utca>Kossuth Lajos utca</utca>
+        <hsz>20</hsz>
+    </lakcim>
+    <szulido>
+        <ev>1982</ev>
+        <ho>8</ho>
+        <nap>5</nap>
+    </szulido>
+    <telefonok>
+      <telefon>111222333</telefon>
+      <telefon>741963644</telefon>
+    </telefonok>
+</Tanar>
+
+<Tanar tanarID="5">
+    <nev>
+        <vnev>Kiss</vnev>
+        <knev>Éva</knev>
+    </nev>
+    <lakcim>
+        <irsz>1066</irsz>
+        <varos>Budapest</varos>
+        <utca>Andrássy út</utca>
+        <hsz>18</hsz>
+    </lakcim>
+    <szulido>
+        <ev>1988</ev>
+        <ho>5</ho>
+        <nap>20</nap>
+    </szulido>
+    <telefonok>
+      <telefon>999888777</telefon>
+      <telefon>123879623</telefon>
+    </telefonok>
+</Tanar>
+
 
   <Tanit tanitID="1" tanarRef="1" targyRef="1">
     <szint>közép</szint>
     <miota>2015</miota>
   </Tanit>
 
-  <Tanar tanarID="2">
-    <nev>
-      <vnev>Szabó</vnev>
-      <knev>Péter</knev>
-    </nev>
-    <lakcim>
-      <irsz>1132</irsz>
-      <varos>Budapest</varos>
-      <utca>Alkotás utca</utca>
-      <hsz>12</hsz>
-    </lakcim> 
-    <szulido>
-      <ev>1978</ev>
-      <ho>6</ho>
-      <nap>25</nap>
-    </szulido>
-    <telefon>987654321</telefon>    
-  </Tanar>
-
   <Tanit tanitID="2" tanarRef="2" targyRef="2">
     <szint>alsó</szint>
     <miota>2010</miota>
   </Tanit>
-
-  <Tanar tanarID="3">
-    <nev>
-      <vnev>Király</vnev>
-      <knev>Mária</knev>
-    </nev>
-    <lakcim>
-      <irsz>1098</irsz>
-      <varos>Budapest</varos>
-      <utca>Szent István utca</utca>
-      <hsz>8</hsz>
-    </lakcim> 
-    <szulido>
-      <ev>1990</ev>
-      <ho>12</ho>
-      <nap>15</nap>
-    </szulido>
-    <telefon>555444333</telefon>    
-  </Tanar>
-
+  
   <Tanit tanitID="3" tanarRef="3" targyRef="3">
     <szint>felső</szint>
     <miota>2012</miota>
   </Tanit>
 
-  <Tanar tanarID="4">
-    <nev>
-      <vnev>Nagy</vnev>
-      <knev>Gábor</knev>
-    </nev>
-    <lakcim>
-      <irsz>1145</irsz>
-      <varos>Budapest</varos>
-      <utca>Kossuth Lajos utca</utca>
-      <hsz>20</hsz>
-    </lakcim> 
-    <szulido>
-      <ev>1982</ev>
-      <ho>8</ho>
-      <nap>5</nap>
-    </szulido>
-    <telefon>111222333</telefon>    
-  </Tanar>
-
   <Tanit tanitID="4" tanarRef="4" targyRef="4">
     <szint>közép</szint>
     <miota>2018</miota>
   </Tanit>
-
-  <Tanar tanarID="5">
-    <nev>
-      <vnev>Kiss</vnev>
-      <knev>Éva</knev>
-    </nev>
-    <lakcim>
-      <irsz>1066</irsz>
-      <varos>Budapest</varos>
-      <utca>Andrássy út</utca>
-      <hsz>18</hsz>
-    </lakcim> 
-    <szulido>
-      <ev>1988</ev>
-      <ho>5</ho>
-      <nap>20</nap>
-    </szulido>
-    <telefon>999888777</telefon>    
-  </Tanar>
 
   <Tanit tanitID="5" tanarRef="5" targyRef="5">
     <szint>felső</szint>
@@ -148,10 +161,7 @@
     <kor>18</kor>    
   </Diak>
 
-  <Tanul tanulID="1" diakRef="1" konyvRef="1">
-    <erdemjegy>4</erdemjegy>
-    <datum>2023-11-15</datum>
-  </Tanul>
+
 
   <Diak diakID="2">  
     <nev>
@@ -173,11 +183,6 @@
     <kor>19</kor>    
   </Diak>
 
-  <Tanul tanulID="2" diakRef="2" konyvRef="2">
-    <erdemjegy>5</erdemjegy>
-    <datum>2023-10-20</datum>
-  </Tanul>
-
   <Diak diakID="3">  
     <nev>
       <vnev>Tóth</vnev>
@@ -198,11 +203,6 @@
     <kor>17</kor>    
   </Diak>
 
-  <Tanul tanulID="3" diakRef="3" konyvRef="3">
-    <erdemjegy>3</erdemjegy>
-    <datum>2023-11-05</datum>
-  </Tanul>
-
   <Diak diakID="4">  
     <nev>
       <vnev>Nagy</vnev>
@@ -222,6 +222,21 @@
     <anyjaneve>Nagy Erzsébet</anyjaneve>
     <kor>19</kor>    
   </Diak>
+
+  <Tanul tanulID="1" diakRef="1" konyvRef="1">
+    <erdemjegy>4</erdemjegy>
+    <datum>2023-11-15</datum>
+  </Tanul>
+
+  <Tanul tanulID="2" diakRef="2" konyvRef="2">
+    <erdemjegy>5</erdemjegy>
+    <datum>2023-10-20</datum>
+  </Tanul>
+
+  <Tanul tanulID="3" diakRef="3" konyvRef="3">
+    <erdemjegy>3</erdemjegy>
+    <datum>2023-11-05</datum>
+  </Tanul>
 
   <Tanul tanulID="4" diakRef="4" konyvRef="4">
     <erdemjegy>5</erdemjegy>
@@ -245,20 +260,36 @@
     <tagozat>Testnevelés</tagozat>
   </Osztaly>
 
-  <Tanulo tanuloID = "1" osztalyRef = "1" diakRef = "1"> </Tanulo>
-  <Tanulo tanuloID = "2" osztalyRef = "1" diakRef = "3"> </Tanulo>
-  <Tanulo tanuloID = "3" osztalyRef = "2" diakRef = "4"> </Tanulo>
-  <Tanulo tanuloID = "4" osztalyRef = "3" diakRef = "2"> </Tanulo>
+  <Tanulo tanuloID = "1" osztalyRef = "1" diakRef = "1"/>
+  <Tanulo tanuloID = "2" osztalyRef = "1" diakRef = "3"/>
+  <Tanulo tanuloID = "3" osztalyRef = "2" diakRef = "4"/>
+  <Tanulo tanuloID = "4" osztalyRef = "3" diakRef = "2"/>
 
-  <Osztalyfonok ofID = "1" tanarRef = "2" osztalyRef ="1"></Osztalyfonok>
-  <Osztalyfonok ofID = "2" tanarRef = "2" osztalyRef ="3"></Osztalyfonok>
-  <Osztalyfonok ofID = "3" tanarRef = "2" osztalyRef ="2"></Osztalyfonok>
+  <Osztalyfonok ofID = "1" tanarRef = "2" osztalyRef ="1"/>
+  <Osztalyfonok ofID = "2" tanarRef = "2" osztalyRef ="3"/>
+  <Osztalyfonok ofID = "3" tanarRef = "2" osztalyRef ="2"/>
 
 
   <!--Tantárgyak és tankönyvek-->
 
   <Tantargy targyID = "1">
     <nev>Magyar nyelv és irodalom</nev>
+  </Tantargy>
+
+  <Tantargy targyID="2">
+    <nev>Matematika</nev>
+  </Tantargy>
+
+  <Tantargy targyID="3">
+    <nev>Biológia</nev>
+  </Tantargy>
+
+  <Tantargy targyID="4">
+    <nev>Történelem</nev>
+  </Tantargy>
+
+  <Tantargy targyID="5">
+    <nev>Fizika</nev>
   </Tantargy>
 
   <Tankonyv TkonyvID = "1">
@@ -268,12 +299,6 @@
     <kiadido>2022-09-01</kiadido>
   </Tankonyv>
 
-  <Konyv konyvID = "1" TkonyvRef = "1" targyRef = "1"> </Konyv>
-
-  <Tantargy targyID="2">
-    <nev>Matematika</nev>
-  </Tantargy>
-
   <Tankonyv TkonyvID="2">
     <cim>Az algebrától a geometriáig</cim>
     <iro>Kovács István</iro>
@@ -281,11 +306,6 @@
     <kiadido>2023-03-15</kiadido>
   </Tankonyv>
 
-  <Konyv konyvID="2" TkonyvRef="2" targyRef="2"> </Konyv>
-
-  <Tantargy targyID="3">
-    <nev>Biológia</nev>
-  </Tantargy>
 
   <Tankonyv TkonyvID="3">
     <cim>Az élővilág csodái</cim>
@@ -294,11 +314,8 @@
     <kiadido>2023-05-20</kiadido>
   </Tankonyv>
 
-  <Konyv konyvID="3" TkonyvRef="3" targyRef="3"> </Konyv>
 
-  <Tantargy targyID="4">
-    <nev>Történelem</nev>
-  </Tantargy>
+
 
   <Tankonyv TkonyvID="4">
     <cim>Az emberiség története</cim>
@@ -307,11 +324,9 @@
     <kiadido>2023-07-10</kiadido>
   </Tankonyv>
 
-  <Konyv konyvID="4" TkonyvRef="4" targyRef="4"> </Konyv>
+  
 
-  <Tantargy targyID="5">
-    <nev>Fizika</nev>
-  </Tantargy>
+
 
   <Tankonyv TkonyvID="5">
     <cim>Az erők és mozgás törvényei</cim>
@@ -320,6 +335,10 @@
     <kiadido>2023-08-25</kiadido>
   </Tankonyv>
 
-  <Konyv konyvID="5" TkonyvRef="5" targyRef="5"> </Konyv>
+  <Konyv konyvID = "1" TkonyvRef = "1" targyRef = "1"/>
+  <Konyv konyvID="2" TkonyvRef="2" targyRef="2"/>
+  <Konyv konyvID="3" TkonyvRef="3" targyRef="3"/>
+  <Konyv konyvID="4" TkonyvRef="4" targyRef="4"/>
+  <Konyv konyvID="5" TkonyvRef="5" targyRef="5"/>
 
 </Iskola_ZF440N>

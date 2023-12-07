@@ -11,7 +11,7 @@ public class DOMWriteZF440N {
 
     public static void main(String[] args) {
         try {
-            File inputFile = new File("E:\\ZF440N_XMLGyak\\XMLTaskZF440N\\XMLZF440N.xml");
+            File inputFile = new File("XMLZF440N.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);

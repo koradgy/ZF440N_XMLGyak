@@ -1,0 +1,56 @@
+<!ELEMENT Iskola_ZF440N (#PCDATA|Tanar|Tanit|Diak|Tanul|Osztaly|Tanulo|Osztalyfonok|Tantargy|Tankonyv|Konyv)*>
+<!ELEMENT Tanar (nev,lakcim,szulido,telefon)>
+<!ATTLIST Tanar tanarID NMTOKEN #REQUIRED>
+<!ELEMENT nev (#PCDATA|vnev|knev)*>
+<!ELEMENT vnev (#PCDATA)>
+<!ELEMENT knev (#PCDATA)>
+<!ELEMENT lakcim (irsz,varos,utca,hsz)>
+<!ELEMENT irsz (#PCDATA)>
+<!ELEMENT varos (#PCDATA)>
+<!ELEMENT utca (#PCDATA)>
+<!ELEMENT hsz (#PCDATA)>
+<!ELEMENT szulido (ev,ho,nap)>
+<!ELEMENT ev (#PCDATA)>
+<!ELEMENT ho (#PCDATA)>
+<!ELEMENT nap (#PCDATA)>
+<!ELEMENT telefon (#PCDATA)>
+<!ELEMENT Tanit (szint,miota)>
+<!ATTLIST Tanit tanitID NMTOKEN #REQUIRED>
+<!ATTLIST Tanit tanarRef NMTOKEN #REQUIRED>
+<!ATTLIST Tanit targyRef NMTOKEN #REQUIRED>
+<!ELEMENT szint (#PCDATA)>
+<!ELEMENT miota (#PCDATA)>
+<!ELEMENT Diak (nev,lakcim,szulido,anyjaneve,kor)>
+<!ATTLIST Diak diakID NMTOKEN #REQUIRED>
+<!ELEMENT anyjaneve (#PCDATA)>
+<!ELEMENT kor (#PCDATA)>
+<!ELEMENT Tanul (erdemjegy,datum)>
+<!ATTLIST Tanul tanulID NMTOKEN #REQUIRED>
+<!ATTLIST Tanul diakRef NMTOKEN #REQUIRED>
+<!ATTLIST Tanul konyvRef NMTOKEN #REQUIRED>
+<!ELEMENT erdemjegy (#PCDATA)>
+<!ELEMENT datum (#PCDATA)>
+<!ELEMENT Osztaly (letszam,tagozat)>
+<!ATTLIST Osztaly osztalyID NMTOKEN #REQUIRED>
+<!ELEMENT letszam (#PCDATA)>
+<!ELEMENT tagozat (#PCDATA)>
+<!ELEMENT Tanulo EMPTY>
+<!ATTLIST Tanulo tanuloID NMTOKEN #REQUIRED>
+<!ATTLIST Tanulo osztalyRef NMTOKEN #REQUIRED>
+<!ATTLIST Tanulo diakRef NMTOKEN #REQUIRED>
+<!ELEMENT Osztalyfonok EMPTY>
+<!ATTLIST Osztalyfonok ofID NMTOKEN #REQUIRED>
+<!ATTLIST Osztalyfonok tanarRef NMTOKEN #REQUIRED>
+<!ATTLIST Osztalyfonok osztalyRef NMTOKEN #REQUIRED>
+<!ELEMENT Tantargy (nev)>
+<!ATTLIST Tantargy targyID NMTOKEN #REQUIRED>
+<!ELEMENT Tankonyv (cim,iro,kiado,kiadido)>
+<!ATTLIST Tankonyv TkonyvID NMTOKEN #REQUIRED>
+<!ELEMENT cim (#PCDATA)>
+<!ELEMENT iro (#PCDATA)>
+<!ELEMENT kiado (#PCDATA)>
+<!ELEMENT kiadido (#PCDATA)>
+<!ELEMENT Konyv EMPTY>
+<!ATTLIST Konyv konyvID NMTOKEN #REQUIRED>
+<!ATTLIST Konyv TkonyvRef NMTOKEN #REQUIRED>
+<!ATTLIST Konyv targyRef NMTOKEN #REQUIRED>

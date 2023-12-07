@@ -14,7 +14,7 @@ public class DOMQueryZF440N {
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
-            Document document = db.parse("E:\\ZF440N_XMLGyak\\XMLTaskZF440N\\XMLZF440N.xml");
+            Document document = db.parse("XMLZF440N.xml");
 
             // Példa: Miskolci tanárok kilistázása
             queryBPTanarok(document);
