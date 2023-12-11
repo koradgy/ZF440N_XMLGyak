@@ -3,134 +3,312 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <!-- Egyszerű típusok -->
+    <xs:simpleType name="irszType">
+        <xs:restriction base="xs:string">
+            <xs:length value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <xs:complexType name="NevType">
+    <xs:simpleType name="evType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1900"/>
+            <xs:maxInclusive value="2023"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="hoType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="napType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="31"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="letszamType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tagozatType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Matematika"/>
+            <xs:enumeration value="Angol"/>
+            <xs:enumeration value="Testnevelés"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="erdemjegyType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Összetett típusok -->
+
+    <!-- TanarType -->
+    <xs:complexType name="TanarType">
+        <xs:sequence>
+            <xs:element name="nev" type="nevTipus"/>
+            <xs:element name="lakcim" type="lakcimTipus"/>
+            <xs:element name="szulido" type="szulidoTipus"/>
+            <xs:element name="telefonok" type="telefonokTipus"/>
+        </xs:sequence>
+        <xs:attribute name="tanarID" type="xs:integer" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="telefonokTipus">
+        <xs:sequence>
+            <xs:element name="telefon" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- TantargyType -->
+    <xs:complexType name="TantargyType">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="targyID" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+
+
+    <!-- TankonyvType -->
+    <xs:complexType name="TankonyvType">
+        <xs:sequence>
+            <xs:element name="cim" type="xs:string"/>
+            <xs:element name="iro" type="xs:string"/>
+            <xs:element name="kiado" type="xs:string"/>
+            <xs:element name="kiadido" type="xs:date"/>
+        </xs:sequence>
+        <xs:attribute name="TkonyvID" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+
+
+    <!-- KonyvType -->
+    <xs:complexType name="KonyvType">
+        <xs:attribute name="konyvID" type="xs:integer" use="required"/>
+        <xs:attribute name="TkonyvRef" type="xs:integer" use="required"/>
+        <xs:attribute name="targyRef" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+
+
+    <!-- TanuloType -->
+    <xs:complexType name="TanuloType">
+        <xs:attribute name="tanuloID" type="xs:integer" use="required"/>
+        <xs:attribute name="osztalyRef" type="xs:integer" use="required"/>
+        <xs:attribute name="diakRef" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+
+
+    <!-- OsztalyfonokType -->
+    <xs:complexType name="OsztalyfonokType">
+        <xs:attribute name="ofID" type="xs:integer" use="required"/>
+        <xs:attribute name="tanarRef" type="xs:integer" use="required"/>
+        <xs:attribute name="osztalyRef" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+
+    <!-- OsztalyType -->
+    <xs:complexType name="OsztalyType">
+        <xs:sequence>
+            <xs:element name="letszam" type="letszamType"/>
+            <xs:element name="tagozat" type="tagozatType"/>
+        </xs:sequence>
+        <xs:attribute name="osztalyID" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+
+
+    <!-- TanitType -->
+    <xs:complexType name="TanitType">
+        <xs:sequence>
+            <xs:element name="szint" type="xs:string"/>
+            <xs:element name="miota" type="xs:integer"/>
+        </xs:sequence>
+        <xs:attribute name="tanitID" type="xs:integer" use="required"/>
+        <xs:attribute name="tanarRef" type="xs:integer" use="required"/>
+        <xs:attribute name="targyRef" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+
+
+    <!-- DiakType -->
+    <xs:complexType name="DiakType">
+        <xs:sequence>
+            <xs:element name="nev" type="nevTipus"/>
+            <xs:element name="lakcim" type="lakcimTipus"/>
+            <xs:element name="szulido" type="szulidoTipus"/>
+            <xs:element name="anyjaneve" type="xs:string"/>
+            <xs:element name="kor" type="xs:integer"/>
+        </xs:sequence>
+        <xs:attribute name="diakID" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+
+
+    <!-- TanulType -->
+    <xs:complexType name="TanulType">
+        <xs:sequence>
+            <xs:element name="erdemjegy" type="erdemjegyType"/>
+            <xs:element name="datum" type="xs:date"/>
+        </xs:sequence>
+        <xs:attribute name="tanulID" type="xs:integer" use="required"/>
+        <xs:attribute name="diakRef" type="xs:integer" use="required"/>
+        <xs:attribute name="konyvRef" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+
+    <!-- Szemelyes adatok -->
+    <xs:complexType name="nevTipus">
         <xs:sequence>
             <xs:element name="vnev" type="xs:string"/>
             <xs:element name="knev" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="CimType">
+    <xs:complexType name="lakcimTipus">
         <xs:sequence>
-            <xs:element name="irsz" type="xs:string"/>
+            <xs:element name="irsz" type="irszType"/>
             <xs:element name="varos" type="xs:string"/>
             <xs:element name="utca" type="xs:string"/>
             <xs:element name="hsz" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="DatumType">
+    <xs:complexType name="szulidoTipus">
         <xs:sequence>
-            <xs:element name="ev" type="xs:integer"/>
-            <xs:element name="ho" type="xs:integer"/>
-            <xs:element name="nap" type="xs:integer"/>
+            <xs:element name="ev" type="evType"/>
+            <xs:element name="ho" type="hoType"/>
+            <xs:element name="nap" type="napType"/>
         </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="TanarType">
-        <xs:sequence>
-            <xs:element name="nev" type="NevType"/>
-            <xs:element name="lakcim" type="CimType"/>
-            <xs:element name="szulido" type="DatumType"/>
-            <xs:element name="telefon" type="xs:string"/>
-        </xs:sequence>
-        <xs:attribute name="tanarID" type="xs:string"/>
-    </xs:complexType>
-
-    <xs:complexType name="TanitType">
-        <xs:sequence>
-            <xs:element name="szint" type="xs:string"/>
-            <xs:element name="miota" type="xs:string"/>
-        </xs:sequence>
-        <xs:attribute name="tanitID" type="xs:string"/>
-        <xs:attribute name="tanarRef" type="xs:string"/>
-        <xs:attribute name="targyRef" type="xs:string"/>
-    </xs:complexType>
-
-    <xs:complexType name="OsztalyType">
-        <xs:sequence>
-            <xs:element name="letszam" type="xs:integer"/>
-            <xs:element name="tagozat" type="xs:string"/>
-        </xs:sequence>
-        <xs:attribute name="osztalyID" type="xs:string"/>
-    </xs:complexType>
-
-    <xs:complexType name="TantargyType">
-        <xs:sequence>
-            <xs:element name="nev" type="xs:string"/>
-        </xs:sequence>
-        <xs:attribute name="targyID" type="xs:string"/>
-    </xs:complexType>
-
-    <xs:complexType name="TankonyvType">
-        <xs:sequence>
-            <xs:element name="cim" type="xs:string"/>
-            <xs:element name="iro" type="xs:string"/>
-            <xs:element name="kiado" type="xs:string"/>
-            <xs:element name="kiadido" type="xs:string"/>
-        </xs:sequence>
-        <xs:attribute name="TkonyvID" type="xs:string"/>
-    </xs:complexType>
-
-    <xs:complexType name="DiakType">
-        <xs:sequence>
-            <xs:element name="nev" type="NevType"/>
-            <xs:element name="lakcim" type="CimType"/>
-            <xs:element name="szulido" type="DatumType"/>
-            <xs:element name="anyjaneve" type="xs:string"/>
-            <xs:element name="kor" type="xs:integer"/>
-        </xs:sequence>
-        <xs:attribute name="diakID" type="xs:string"/>
-    </xs:complexType>
-
-    <xs:complexType name="TanulType">
-        <xs:sequence>
-            <xs:element name="erdemjegy" type="xs:string"/>
-            <xs:element name="datum" type="xs:string"/>
-        </xs:sequence>
-        <xs:attribute name="tanulID" type="xs:string"/>
-        <xs:attribute name="diakRef" type="xs:string"/>
-        <xs:attribute name="konyvRef" type="xs:string"/>
-    </xs:complexType>
-
-    <xs:complexType name="OsztalyfonokType">
-        <xs:attribute name="ofID" type="xs:string"/>
-        <xs:attribute name="tanarRef" type="xs:string"/>
-        <xs:attribute name="osztalyRef" type="xs:string"/>
-    </xs:complexType>
-  
-
-    <xs:complexType name="TanuloType">
-        <xs:attribute name="osztalyRef" type="xs:string"/>
-        <xs:attribute name="diakRef" type="xs:string"/>
-    </xs:complexType>
-  
-    <xs:complexType name="KonyvType">
-        <xs:attribute name="konyvID" type="xs:string"/>
-        <xs:attribute name="TkonyvRef" type="xs:string"/>
-        <xs:attribute name="targyRef" type="xs:string"/>
     </xs:complexType>
 
     <!-- Gyökér elem -->
-
     <xs:element name="Iskola_ZF440N">
         <xs:complexType>
             <xs:sequence>
-                <xs:choice minOccurs="0" maxOccurs="unbounded">
-                    <xs:element name="Tanar" type="TanarType"/>
-                    <xs:element name="Tanit" type="TanitType"/>
-                    <xs:element name="Osztaly" type="OsztalyType"/>
-                    <xs:element name="Tantargy" type="TantargyType"/>
-                    <xs:element name="Tankonyv" type="TankonyvType"/>
-                    <xs:element name="Diak" type="DiakType"/>
-                    <xs:element name="Tanul" type="TanulType"/>
-                    <xs:element name="Osztalyfonok" type="OsztalyfonokType"/>
-                    <xs:element name="Tanulo" type="TanuloType"/>
-                    <xs:element name="Konyv" type="KonyvType"/>
-                </xs:choice>
+                <xs:element name="Tanar" type="TanarType" maxOccurs="unbounded"/>
+                <xs:element name="Tanit" type="TanitType" maxOccurs="unbounded"/>
+                <xs:element name="Diak" type="DiakType" maxOccurs="unbounded"/>
+                <xs:element name="Tanul" type="TanulType" maxOccurs="unbounded"/>
+                <xs:element name="Osztaly" type="OsztalyType" maxOccurs="unbounded"/>
+                <xs:element name="Tanulo" type="TanuloType" maxOccurs="unbounded"/>
+                <xs:element name="Osztalyfonok" type="OsztalyfonokType" maxOccurs="unbounded"/>
+                <xs:element name="Tantargy" type="TantargyType" maxOccurs="unbounded"/>
+                <xs:element name="Tankonyv" type="TankonyvType" maxOccurs="unbounded"/>
+                <xs:element name="Konyv" type="KonyvType" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
-    </xs:element>
 
+
+        <!-- Elsődleges kulcsok-->
+            <xs:key name="tanar_kulcs">
+                    <xs:selector xpath="TanarType"/>
+                    <xs:field xpath="@tanarID"/>
+            </xs:key>
+
+            <xs:key name="targy_kulcs">
+                    <xs:selector xpath="TantargyType"/>
+                    <xs:field xpath="@targyID"/>
+            </xs:key>
+
+            <xs:key name="tankonyv_kulcs">
+                    <xs:selector xpath="TankonyvType"/>
+                    <xs:field xpath="@TkonyvID"/>
+            </xs:key>
+
+            <xs:key name="konyv_kulcs">
+                    <xs:selector xpath="KonyvType"/>
+                    <xs:field xpath="@konyvID"/>
+            </xs:key>
+
+            <xs:key name="tan_kulcs">
+                    <xs:selector xpath="TanuloType"/>
+                    <xs:field xpath="@tanuloID"/>
+            </xs:key>
+
+            <xs:key name="ofi_kulcs">
+                    <xs:selector xpath="OsztalyfonokType"/>
+                    <xs:field xpath="@ofID"/>
+            </xs:key>
+
+            <xs:key name="osztaly">
+                    <xs:selector xpath="OsztalyType"/>
+                    <xs:field xpath="@osztalyID"/>
+            </xs:key>
+
+            <xs:key name="tanit_kulcs">
+                    <xs:selector xpath="TanitType"/>
+                    <xs:field xpath="@tanitID"/>
+            </xs:key>
+
+            <xs:key name="diak_kulcs">
+                <xs:selector xpath="DiakType"/>
+                <xs:field xpath="@diakID"/>
+            </xs:key>
+
+            <xs:key name="tanul_kulcs" >
+                <xs:selector xpath="TanulType"/>
+                <xs:field xpath="@tanulID"/>
+            </xs:key>
+
+            <!--Idegen kulcsok-->
+            <xs:keyref name="tanar-tanit_kulcs" refer="tanar_kulcs">
+                <xs:selector xpath="TanitType"/>
+                <xs:field xpath="@tanarRef"/>
+            </xs:keyref>
+            
+            <xs:keyref name="diak-tanul_kulcs" refer="diak_kulcs">
+                <xs:selector xpath="TanulType"/>
+                <xs:field xpath="@diakRef"/>
+            </xs:keyref>
+            
+            <xs:keyref name="tanulo-osztaly_kulcs" refer="tan_kulcs">
+                <xs:selector xpath="TanuloType"/>
+                <xs:field xpath="@osztalyRef"/>
+            </xs:keyref>
+            
+            <xs:keyref name="osztaly-osztalyfonok_kulcs" refer="ofi_kulcs">
+                <xs:selector xpath="OsztalyfonokType"/>
+                <xs:field xpath="@osztalyRef"/>
+            </xs:keyref>
+            
+            <xs:keyref name="tanar-targy_kulcs" refer="tanit_kulcs">
+                <xs:selector xpath="TanitType"/>
+                <xs:field xpath="@targyRef"/>
+            </xs:keyref>
+
+            <xs:keyref name="diak-tanul" refer="diak_kulcs">
+                <xs:selector xpath="TanulType"/>
+                <xs:field xpath="@diakRef"/>
+            </xs:keyref>
+
+            <xs:keyref name="diak-osztay_kulcs" refer="diak_kulcs">
+                <xs:selector xpath="TanuloType"/>
+                <xs:field xpath="@diakRef"/>
+            </xs:keyref>
+
+            <xs:keyref name="tantargy-tankonyv_kulcs" refer="konyv_kulcs">
+                <xs:selector xpath="KonyvType"/>
+                <xs:field xpath="@targyRef"/>
+            </xs:keyref>
+
+            <!-- 1:1 kapcsolat-->
+
+            <xs:unique name="osztaly-tanar_kapcsolat">
+                <xs:selector xpath="TanarType"/>
+                <xs:field xpath="tanarID"/>
+            </xs:unique>
+    </xs:element>
 </xs:schema>
