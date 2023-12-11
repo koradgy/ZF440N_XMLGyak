@@ -99,20 +99,36 @@
         <xs:attribute name="tanarRef" type="xs:string"/>
         <xs:attribute name="osztalyRef" type="xs:string"/>
     </xs:complexType>
+  
+
+    <xs:complexType name="TanuloType">
+        <xs:attribute name="osztalyRef" type="xs:string"/>
+        <xs:attribute name="diakRef" type="xs:string"/>
+    </xs:complexType>
+  
+    <xs:complexType name="KonyvType">
+        <xs:attribute name="konyvID" type="xs:string"/>
+        <xs:attribute name="TkonyvRef" type="xs:string"/>
+        <xs:attribute name="targyRef" type="xs:string"/>
+    </xs:complexType>
 
     <!-- Gyökér elem -->
 
     <xs:element name="Iskola_ZF440N">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Tanar" type="TanarType" maxOccurs="unbounded"/>
-                <xs:element name="Tanit" type="TanitType" maxOccurs="unbounded"/>
-                <xs:element name="Osztaly" type="OsztalyType" maxOccurs="unbounded"/>
-                <xs:element name="Tantargy" type="TantargyType" maxOccurs="unbounded"/>
-                <xs:element name="Tankonyv" type="TankonyvType" maxOccurs="unbounded"/>
-                <xs:element name="Diak" type="DiakType" maxOccurs="unbounded"/>
-                <xs:element name="Tanul" type="TanulType" maxOccurs="unbounded"/>
-                <xs:element name="Osztalyfonok" type="OsztalyfonokType" maxOccurs="unbounded"/>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="Tanar" type="TanarType"/>
+                    <xs:element name="Tanit" type="TanitType"/>
+                    <xs:element name="Osztaly" type="OsztalyType"/>
+                    <xs:element name="Tantargy" type="TantargyType"/>
+                    <xs:element name="Tankonyv" type="TankonyvType"/>
+                    <xs:element name="Diak" type="DiakType"/>
+                    <xs:element name="Tanul" type="TanulType"/>
+                    <xs:element name="Osztalyfonok" type="OsztalyfonokType"/>
+                    <xs:element name="Tanulo" type="TanuloType"/>
+                    <xs:element name="Konyv" type="KonyvType"/>
+                </xs:choice>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

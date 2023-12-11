@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Iskola_ZF440N xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="XMLSchemaZF440N.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Iskola_ZF440N xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemaZF440N.xsd">
 
 
   <!--Tanárok-->
@@ -21,11 +20,11 @@
       <ho>3</ho>
       <nap>10</nap>
     </szulido>
-    <telefon>123456789</telefon>    
+    <telefon>NewPhoneNumber</telefon>    
   </Tanar>
 
-  <Tanit tanitID="1" tanarRef="1" targyRef="1">
-    <szint>közép</szint>
+  <Tanit tanarRef="1" tanitID="1" targyRef="1">
+    <szint>Alap</szint>
     <miota>2015</miota>
   </Tanit>
 
@@ -48,7 +47,7 @@
     <telefon>987654321</telefon>    
   </Tanar>
 
-  <Tanit tanitID="2" tanarRef="2" targyRef="2">
+  <Tanit tanarRef="2" tanitID="2" targyRef="2">
     <szint>alsó</szint>
     <miota>2010</miota>
   </Tanit>
@@ -72,7 +71,7 @@
     <telefon>555444333</telefon>    
   </Tanar>
 
-  <Tanit tanitID="3" tanarRef="3" targyRef="3">
+  <Tanit tanarRef="3" tanitID="3" targyRef="3">
     <szint>felső</szint>
     <miota>2012</miota>
   </Tanit>
@@ -96,7 +95,7 @@
     <telefon>111222333</telefon>    
   </Tanar>
 
-  <Tanit tanitID="4" tanarRef="4" targyRef="4">
+  <Tanit tanarRef="4" tanitID="4" targyRef="4">
     <szint>közép</szint>
     <miota>2018</miota>
   </Tanit>
@@ -120,7 +119,7 @@
     <telefon>999888777</telefon>    
   </Tanar>
 
-  <Tanit tanitID="5" tanarRef="5" targyRef="5">
+  <Tanit tanarRef="5" tanitID="5" targyRef="5">
     <szint>felső</szint>
     <miota>2016</miota>
   </Tanit>
@@ -145,10 +144,10 @@
       <nap>5</nap>
     </szulido>
     <anyjaneve>Nagy Mária</anyjaneve>
-    <kor>18</kor>    
+    <kor>20</kor>    
   </Diak>
 
-  <Tanul tanulID="1" diakRef="1" konyvRef="1">
+  <Tanul diakRef="1" konyvRef="1" tanulID="1">
     <erdemjegy>4</erdemjegy>
     <datum>2023-11-15</datum>
   </Tanul>
@@ -173,7 +172,7 @@
     <kor>19</kor>    
   </Diak>
 
-  <Tanul tanulID="2" diakRef="2" konyvRef="2">
+  <Tanul diakRef="2" konyvRef="2" tanulID="2">
     <erdemjegy>5</erdemjegy>
     <datum>2023-10-20</datum>
   </Tanul>
@@ -198,7 +197,7 @@
     <kor>17</kor>    
   </Diak>
 
-  <Tanul tanulID="3" diakRef="3" konyvRef="3">
+  <Tanul diakRef="3" konyvRef="3" tanulID="3">
     <erdemjegy>3</erdemjegy>
     <datum>2023-11-05</datum>
   </Tanul>
@@ -223,52 +222,52 @@
     <kor>19</kor>    
   </Diak>
 
-  <Tanul tanulID="4" diakRef="4" konyvRef="4">
+  <Tanul diakRef="4" konyvRef="4" tanulID="4">
     <erdemjegy>5</erdemjegy>
     <datum>2023-10-10</datum>
   </Tanul>
 
   <!--Osztályok-->
 
-  <Osztaly osztalyID = "1" >
+  <Osztaly osztalyID="1">
     <letszam>30</letszam>
     <tagozat>Matematika</tagozat>
   </Osztaly>
 
-  <Osztaly osztalyID = "2" >
+  <Osztaly osztalyID="2">
     <letszam>24</letszam>
     <tagozat>Angol</tagozat>
   </Osztaly>
 
-  <Osztaly osztalyID = "3" >
+  <Osztaly osztalyID="3">
     <letszam>15</letszam>
     <tagozat>Testnevelés</tagozat>
   </Osztaly>
 
-  <Tanulo osztalyRef = "1" diakRef = "1"/> 
-  <Tanulo osztalyRef = "1" diakRef = "3"/> 
-  <Tanulo osztalyRef = "2" diakRef = "4"/> 
-  <Tanulo osztalyRef = "3" diakRef = "2"/>
+  <Tanulo diakRef="1" osztalyRef="1"/> 
+  <Tanulo diakRef="3" osztalyRef="1"/> 
+  <Tanulo diakRef="4" osztalyRef="2"/> 
+  <Tanulo diakRef="2" osztalyRef="3"/>
 
-  <Osztalyfonok ofID = "1" tanarRef = "2" osztalyRef ="1"></Osztalyfonok>
-  <Osztalyfonok ofID = "2" tanarRef = "2" osztalyRef ="3"></Osztalyfonok>
-  <Osztalyfonok ofID = "3" tanarRef = "2" osztalyRef ="2"></Osztalyfonok>
+  <Osztalyfonok ofID="1" osztalyRef="1" tanarRef="2"/>
+  <Osztalyfonok ofID="2" osztalyRef="3" tanarRef="2"/>
+  <Osztalyfonok ofID="3" osztalyRef="2" tanarRef="2"/>
 
 
   <!--Tantárgyak és tankönyvek-->
 
-  <Tantargy targyID = "1">
+  <Tantargy targyID="1">
     <nev>Magyar nyelv és irodalom</nev>
   </Tantargy>
 
-  <Tankonyv TkonyvID = "1">
+  <Tankonyv TkonyvID="1">
     <cim>Az elveszett idő nyomában</cim>
     <iro>József Attila</iro>
     <kiado>Könyvkiadó Kft.</kiado>
     <kiadido>2022-09-01</kiadido>
   </Tankonyv>
 
-  <Konyv TkonyvRef = "1" targyRef = "1"/>
+  <Konyv TkonyvRef="1" targyRef="1"/>
 
   <Tantargy targyID="2">
     <nev>Matematika</nev>

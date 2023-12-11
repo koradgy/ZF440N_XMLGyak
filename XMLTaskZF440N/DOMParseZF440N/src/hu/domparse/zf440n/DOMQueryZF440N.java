@@ -158,7 +158,7 @@ public class DOMQueryZF440N {
             Element osztalyElement = (Element) osztalyNode;
     
             String tantargy = osztalyElement.getElementsByTagName("tagozat").item(0).getTextContent();
-            int osztalyLetszam = Integer.parseInt(osztalyElement.getElementsByTagName("letszam").item(0).getTextContent());
+           // int osztalyLetszam = Integer.parseInt(osztalyElement.getElementsByTagName("letszam").item(0).getTextContent());
             int tantargyLetszam = 0;
     
             for (int j = 0; j < tanuloList.getLength(); j++) {

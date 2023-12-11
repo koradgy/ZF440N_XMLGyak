@@ -11,11 +11,11 @@ public class DOMModifyZF440N {
 
     public static void main(String[] args) {
         try {
-            File inputFile = new File("E:\\ZF440N_XMLGyak\\XMLTaskZF440N\\XMLZF440N.xml");
-
+            File inputFile = new File("XMLZF440N.xml");
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
             Document doc = docBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
 
             // Módosítások végrehajtása
             modifyTelefon(doc, "1", "NewPhoneNumber");
@@ -24,7 +24,11 @@ public class DOMModifyZF440N {
             modifyKiado(doc, "1", "NewPublisher");
 
             // Visszaírás az XML fájlba
-            writeDocumentToFile(doc, "E:\\ZF440N_XMLGyak\\XMLTaskZF440N\\XMLZF440N.xml");
+            writeDocumentToFile(doc, "XMLZF440NModify.xml");
+
+            // Fa struktúra kiírása a konzolra
+            printNode(doc.getDocumentElement(), "");
+            System.out.println("The content has been written to the output file successfully.");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -38,6 +42,7 @@ public class DOMModifyZF440N {
 
             if (tanarElement.getAttribute("tanarID").equals(tanarID)) {
                 tanarElement.getElementsByTagName("telefon").item(0).setTextContent(newPhoneNumber);
+                System.out.println("TanarID " + tanarID + " telefon változás: " + newPhoneNumber);
             }
         }
     }
@@ -50,6 +55,7 @@ public class DOMModifyZF440N {
 
             if (diakElement.getAttribute("diakID").equals(diakID)) {
                 diakElement.getElementsByTagName("kor").item(0).setTextContent(Integer.toString(newAge));
+                System.out.println("DiakID " + diakID + " kor változás: " + newAge);
             }
         }
     }
@@ -62,6 +68,7 @@ public class DOMModifyZF440N {
 
             if (tanitElement.getAttribute("tanarRef").equals(tanarID)) {
                 tanitElement.getElementsByTagName("szint").item(0).setTextContent(newSzint);
+                System.out.println("TanarID " + tanarID + " szint változás: " + newSzint);
             }
         }
     }
@@ -74,6 +81,7 @@ public class DOMModifyZF440N {
 
             if (konyvElement.getAttribute("konyvID").equals(konyvID)) {
                 konyvElement.getElementsByTagName("kiado").item(0).setTextContent(newPublisher);
+                System.out.println("KonyvID " + konyvID + " kiado változás: " + newPublisher);
             }
         }
     }
@@ -86,9 +94,36 @@ public class DOMModifyZF440N {
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(new File(filename));
             transformer.transform(source, result);
-            System.out.println("The content has been written to the output file successfully.");
         } catch (TransformerConfigurationException e) {
             e.printStackTrace();
+        }
+    }
+
+    private static void printNode(Node node, String indent) {
+        if (node.getNodeType() == Node.ELEMENT_NODE) {
+            System.out.print("\n" + indent + "<" + node.getNodeName());
+            if (node.hasAttributes()) {
+                NamedNodeMap nodeMap = node.getAttributes();
+                for (int i = 0; i < nodeMap.getLength(); i++) {
+                    Node attr = nodeMap.item(i);
+                    System.out.print(" " + attr.getNodeName() + "=\"" + attr.getNodeValue() + "\"");
+                }
+            }
+
+            NodeList children = node.getChildNodes();
+            if (children.getLength() == 1 && children.item(0).getNodeType() == Node.TEXT_NODE) {
+                System.out.print(">" + children.item(0).getTextContent().trim());
+                System.out.println("</" + node.getNodeName() + ">");
+            } else {
+                System.out.println(">");
+                for (int i = 0; i < children.getLength(); i++)
+                    printNode(children.item(i), indent + "    ");
+                System.out.println(indent + "</" + node.getNodeName() + ">");
+            }
+        } else if (node.getNodeType() == Node.TEXT_NODE) {
+            String content = node.getTextContent().trim();
+            if (!content.isEmpty())
+                System.out.print(content);
         }
     }
 }
