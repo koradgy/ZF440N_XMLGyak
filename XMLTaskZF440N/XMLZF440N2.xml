@@ -1,0 +1,338 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Iskola_ZF440N xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemaZF440N.xsd">
+
+  <!--Tanárok-->
+
+  <Tanar tanarID="1">
+    <nev>
+        <vnev>Kovács</vnev>
+        <knev>Anna</knev>
+    </nev>
+    <lakcim>
+        <irsz>1024</irsz>
+        <varos>Budapest</varos>
+        <utca>Kossuth utca</utca>
+        <hsz>5</hsz>
+    </lakcim>
+    <szulido>
+        <ev>1985</ev>
+        <ho>3</ho>
+        <nap>10</nap>
+    </szulido>
+    <telefonok>
+        <telefon>123456789</telefon>
+        <telefon>987654321</telefon>
+    </telefonok>
+</Tanar>
+
+<Tanar tanarID="2">
+    <nev>
+        <vnev>Szabó</vnev>
+        <knev>Péter</knev>
+    </nev>
+    <lakcim>
+        <irsz>1132</irsz>
+        <varos>Budapest</varos>
+        <utca>Alkotás utca</utca>
+        <hsz>12</hsz>
+    </lakcim>
+    <szulido>
+        <ev>1978</ev>
+        <ho>6</ho>
+        <nap>25</nap>
+    </szulido>
+    <telefonok>
+      <telefon>987654321</telefon>
+      <telefon>000111222</telefon>
+    </telefonok>
+</Tanar>
+
+<Tanar tanarID="3">
+    <nev>
+        <vnev>Király</vnev>
+        <knev>Mária</knev>
+    </nev>
+    <lakcim>
+        <irsz>1098</irsz>
+        <varos>Budapest</varos>
+        <utca>Szent István utca</utca>
+        <hsz>8</hsz>
+    </lakcim>
+    <szulido>
+        <ev>1990</ev>
+        <ho>12</ho>
+        <nap>15</nap>
+    </szulido>
+    <telefonok>
+      <telefon>555444333</telefon>
+      <telefon>777888999</telefon>
+    </telefonok>
+</Tanar>
+
+<Tanar tanarID="4">
+    <nev>
+        <vnev>Nagy</vnev>
+        <knev>Gábor</knev>
+    </nev>
+    <lakcim>
+        <irsz>1145</irsz>
+        <varos>Budapest</varos>
+        <utca>Kossuth Lajos utca</utca>
+        <hsz>20</hsz>
+    </lakcim>
+    <szulido>
+        <ev>1982</ev>
+        <ho>8</ho>
+        <nap>5</nap>
+    </szulido>
+    <telefonok>
+      <telefon>111222333</telefon>
+      <telefon>741963644</telefon>
+    </telefonok>
+</Tanar>
+
+<Tanar tanarID="5">
+    <nev>
+        <vnev>Kiss</vnev>
+        <knev>Éva</knev>
+    </nev>
+    <lakcim>
+        <irsz>1066</irsz>
+        <varos>Budapest</varos>
+        <utca>Andrássy út</utca>
+        <hsz>18</hsz>
+    </lakcim>
+    <szulido>
+        <ev>1988</ev>
+        <ho>5</ho>
+        <nap>20</nap>
+    </szulido>
+    <telefonok>
+      <telefon>999888777</telefon>
+      <telefon>123879623</telefon>
+    </telefonok>
+</Tanar>
+
+
+  <Tanit tanarRef="1" tanitID="1" targyRef="1">
+    <szint>közép</szint>
+    <miota>2015</miota>
+  </Tanit>
+
+  <Tanit tanarRef="2" tanitID="2" targyRef="2">
+    <szint>alsó</szint>
+    <miota>2010</miota>
+  </Tanit>
+  
+  <Tanit tanarRef="3" tanitID="3" targyRef="3">
+    <szint>felső</szint>
+    <miota>2012</miota>
+  </Tanit>
+
+  <Tanit tanarRef="4" tanitID="4" targyRef="4">
+    <szint>közép</szint>
+    <miota>2018</miota>
+  </Tanit>
+
+  <Tanit tanarRef="5" tanitID="5" targyRef="5">
+    <szint>felső</szint>
+    <miota>2016</miota>
+  </Tanit>
+
+
+  <!--Diákok-->
+
+  <Diak diakID="1">  
+    <nev>
+      <vnev>Nagy</vnev>
+      <knev>Péter</knev>
+    </nev>
+    <lakcim>
+      <irsz>1111</irsz>
+      <varos>Szeged</varos>
+      <utca>Petőfi utca</utca>
+      <hsz>15</hsz>
+    </lakcim> 
+    <szulido>
+      <ev>2005</ev>
+      <ho>7</ho>
+      <nap>5</nap>
+    </szulido>
+    <anyjaneve>Nagy Mária</anyjaneve>
+    <kor>18</kor>    
+  </Diak>
+
+
+
+  <Diak diakID="2">  
+    <nev>
+      <vnev>Kis</vnev>
+      <knev>Anna</knev>
+    </nev>
+    <lakcim>
+      <irsz>1020</irsz>
+      <varos>Budapest</varos>
+      <utca>Alkotmány utca</utca>
+      <hsz>8</hsz>
+    </lakcim> 
+    <szulido>
+      <ev>2004</ev>
+      <ho>5</ho>
+      <nap>12</nap>
+    </szulido>
+    <anyjaneve>Kis Zsuzsanna</anyjaneve>
+    <kor>19</kor>    
+  </Diak>
+
+  <Diak diakID="3">  
+    <nev>
+      <vnev>Tóth</vnev>
+      <knev>Géza</knev>
+    </nev>
+    <lakcim>
+      <irsz>1138</irsz>
+      <varos>Budapest</varos>
+      <utca>Váci utca</utca>
+      <hsz>10</hsz>
+    </lakcim> 
+    <szulido>
+      <ev>2006</ev>
+      <ho>8</ho>
+      <nap>28</nap>
+    </szulido>
+    <anyjaneve>Tóth Éva</anyjaneve>
+    <kor>17</kor>    
+  </Diak>
+
+  <Diak diakID="4">  
+    <nev>
+      <vnev>Nagy</vnev>
+      <knev>Mária</knev>
+    </nev>
+    <lakcim>
+      <irsz>1095</irsz>
+      <varos>Budapest</varos>
+      <utca>Kerepesi út</utca>
+      <hsz>22</hsz>
+    </lakcim> 
+    <szulido>
+      <ev>2003</ev>
+      <ho>4</ho>
+      <nap>15</nap>
+    </szulido>
+    <anyjaneve>Nagy Erzsébet</anyjaneve>
+    <kor>19</kor>    
+  </Diak>
+
+  <Tanul diakRef="1" konyvRef="1" tanulID="1">
+    <erdemjegy>4</erdemjegy>
+    <datum>2023-11-15</datum>
+  </Tanul>
+
+  <Tanul diakRef="2" konyvRef="2" tanulID="2">
+    <erdemjegy>5</erdemjegy>
+    <datum>2023-10-20</datum>
+  </Tanul>
+
+  <Tanul diakRef="3" konyvRef="3" tanulID="3">
+    <erdemjegy>3</erdemjegy>
+    <datum>2023-11-05</datum>
+  </Tanul>
+
+  <Tanul diakRef="4" konyvRef="4" tanulID="4">
+    <erdemjegy>5</erdemjegy>
+    <datum>2023-10-10</datum>
+  </Tanul>
+
+  <!--Osztályok-->
+
+  <Osztaly osztalyID="1">
+    <letszam>30</letszam>
+    <tagozat>Matematika</tagozat>
+  </Osztaly>
+
+  <Osztaly osztalyID="2">
+    <letszam>24</letszam>
+    <tagozat>Angol</tagozat>
+  </Osztaly>
+
+  <Osztaly osztalyID="3">
+    <letszam>15</letszam>
+    <tagozat>Testnevelés</tagozat>
+  </Osztaly>
+
+  <Tanulo diakRef="1" osztalyRef="1" tanuloID="1"/>
+  <Tanulo diakRef="3" osztalyRef="1" tanuloID="2"/>
+  <Tanulo diakRef="4" osztalyRef="2" tanuloID="3"/>
+  <Tanulo diakRef="2" osztalyRef="3" tanuloID="4"/>
+
+  <Osztalyfonok ofID="1" osztalyRef="1" tanarRef="2"/>
+  <Osztalyfonok ofID="2" osztalyRef="3" tanarRef="2"/>
+  <Osztalyfonok ofID="3" osztalyRef="2" tanarRef="2"/>
+
+
+  <!--Tantárgyak és tankönyvek-->
+
+  <Tantargy targyID="1">
+    <nev>Magyar nyelv és irodalom</nev>
+  </Tantargy>
+
+  <Tantargy targyID="2">
+    <nev>Matematika</nev>
+  </Tantargy>
+
+  <Tantargy targyID="3">
+    <nev>Biológia</nev>
+  </Tantargy>
+
+  <Tantargy targyID="4">
+    <nev>Történelem</nev>
+  </Tantargy>
+
+  <Tantargy targyID="5">
+    <nev>Fizika</nev>
+  </Tantargy>
+
+  <Tankonyv TkonyvID="1">
+    <cim>Az elveszett idő nyomában</cim>
+    <iro>József Attila</iro>
+    <kiado>Könyvkiadó Kft.</kiado>
+    <kiadido>2022-09-01</kiadido>
+  </Tankonyv>
+
+  <Tankonyv TkonyvID="2">
+    <cim>Az algebrától a geometriáig</cim>
+    <iro>Kovács István</iro>
+    <kiado>Matektudás Kiadó</kiado>
+    <kiadido>2023-03-15</kiadido>
+  </Tankonyv>
+
+  <Tankonyv TkonyvID="3">
+    <cim>Az élővilág csodái</cim>
+    <iro>Nagy Éva</iro>
+    <kiado>Biokutató Könyvkiadó</kiado>
+    <kiadido>2023-05-20</kiadido>
+  </Tankonyv>
+
+  <Tankonyv TkonyvID="4">
+    <cim>Az emberiség története</cim>
+    <iro>Kiss Gábor</iro>
+    <kiado>Történelem Mester Kiadó</kiado>
+    <kiadido>2023-07-10</kiadido>
+  </Tankonyv>
+
+  <Tankonyv TkonyvID="5">
+    <cim>Az erők és mozgás törvényei</cim>
+    <iro>Varga János</iro>
+    <kiado>Fizika Guru Kiadó</kiado>
+    <kiadido>2023-08-25</kiadido>
+  </Tankonyv>
+
+  <Konyv TkonyvRef="1" konyvID="1" targyRef="1"/>
+  <Konyv TkonyvRef="2" konyvID="2" targyRef="2"/>
+  <Konyv TkonyvRef="3" konyvID="3" targyRef="3"/>
+  <Konyv TkonyvRef="4" konyvID="4" targyRef="4"/>
+  <Konyv TkonyvRef="5" konyvID="5" targyRef="5"/>
+
+</Iskola_ZF440N>

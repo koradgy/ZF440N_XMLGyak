@@ -18,7 +18,7 @@ public class DOMWriteZF440N {
             doc.getDocumentElement().normalize();
 
             printNode(doc.getDocumentElement(), "");
-            writeDocumentToFile(doc, "XMLZF440N1.xml");
+            writeDocumentToFile(doc, "XMLZF440N2.xml");
 
             System.out.println("The content has been written to the output file successfully.");
         } catch (Exception e) {
