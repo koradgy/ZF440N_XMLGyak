@@ -15,9 +15,9 @@ public class JSONWrite {
     public static void main(String[] args) {
         JSONParser parser = new JSONParser();
 
-        try (FileReader reader = new FileReader("ZF440N_1206\\kurzusfelvetelZF440N.json")) {
+        try (FileReader reader = new FileReader("kurzusfelvetelZF440N.json")) {
             Object obj = parser.parse(reader);
-            File file = new File("ZF440N_1206\\kurzusfelvetelZF440N_1.json");
+            File file = new File("kurzusfelvetelZF440N_1.json");
             JSONObject jsonObject = (JSONObject) obj;
             OutputStreamWriter wr = new OutputStreamWriter(System.out, StandardCharsets.UTF_8);
             wr.write(jsonObject.toString());
