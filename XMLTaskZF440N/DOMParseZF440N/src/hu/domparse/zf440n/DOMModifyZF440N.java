@@ -22,6 +22,7 @@ public class DOMModifyZF440N {
             modifyKor(doc, "1", 20);
             modifySzint(doc, "1", "Alap");
             modifyKiado(doc, "1", "NewPublisher");
+            modifyLakcim(doc, "4", "Miskolc", "Miskolc utca", "4");
 
             // Visszaírás az XML fájlba
             writeDocumentToFile(doc, "XMLZF440NModify.xml");
@@ -124,6 +125,22 @@ public class DOMModifyZF440N {
             String content = node.getTextContent().trim();
             if (!content.isEmpty())
                 System.out.print(content);
+        }
+    }
+
+    private static void modifyLakcim(Document doc, String tanarID, String varos, String utca, String hsz) {
+        NodeList tanarList = doc.getElementsByTagName("Tanar");
+        for (int i = 0; i < tanarList.getLength(); i++) {
+            Node tanar = tanarList.item(i);
+            Element tanarElement = (Element) tanar;
+
+            if (tanarElement.getAttribute("tanarID").equals(tanarID)) {
+                // Módosítsuk a tanár lakcímét Miskolcra
+                tanarElement.getElementsByTagName("varos").item(0).setTextContent(varos);
+                tanarElement.getElementsByTagName("utca").item(0).setTextContent(utca);
+                tanarElement.getElementsByTagName("hsz").item(0).setTextContent(hsz);
+                System.out.println("TanarID " + tanarID + " lakcím módosítás: " + varos + ", " + utca + " " + hsz);
+            }
         }
     }
 }

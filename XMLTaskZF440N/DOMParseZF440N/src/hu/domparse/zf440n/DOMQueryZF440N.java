@@ -21,6 +21,7 @@ public class DOMQueryZF440N {
             queryDiakokTantargybol(document, "Fizika");
             queryTanarokAdataiy(document);
             queryOsztalyokLetszamTantargyankent(document);
+            query2004ElottSzuletes(document);
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -184,4 +185,51 @@ public class DOMQueryZF440N {
     
         System.out.println("\n");
     }
+
+    private static void query2004ElottSzuletes(Document document) {
+        System.out.println("=== 2004 előtt született diákok ===");
+    
+        NodeList diakList = document.getElementsByTagName("Diak");
+    
+        for (int i = 0; i < diakList.getLength(); i++) {
+            Node diakNode = diakList.item(i);
+    
+            if (diakNode.getNodeType() == Node.ELEMENT_NODE) {
+                Element diakElement = (Element) diakNode;
+    
+                int szuletesiEv = Integer.parseInt(diakElement.getElementsByTagName("ev").item(0).getTextContent());
+    
+                if (szuletesiEv < 2004) {
+                    // Az adott diák adatainak kiírása
+                    String nev = diakElement.getElementsByTagName("nev").item(0).getTextContent();
+                    String szuletesiDatum = diakElement.getElementsByTagName("szulido").item(0).getTextContent();
+    
+                    System.out.println("  <Diak>");
+                    System.out.println("    <Nev>" + nev + "</Nev>");
+                    System.out.println("    <SzuletesiDatum>" + szuletesiDatum + "</SzuletesiDatum>");
+                    System.out.println("  </Diak>");
+                    System.out.println("\n");
+                }
+            }
+        }
+    
+        System.out.println("\n");
+    }
+
+        private static void modifyLakcim(Document doc, String tanarID, String varos, String utca, String hsz) {
+        NodeList tanarList = doc.getElementsByTagName("Tanar");
+        for (int i = 0; i < tanarList.getLength(); i++) {
+            Node tanar = tanarList.item(i);
+            Element tanarElement = (Element) tanar;
+
+            if (tanarElement.getAttribute("tanarID").equals(tanarID)) {
+                // Módosítsuk a tanár lakcímét Miskolcra
+                tanarElement.getElementsByTagName("varos").item(0).setTextContent(varos);
+                tanarElement.getElementsByTagName("utca").item(0).setTextContent(utca);
+                tanarElement.getElementsByTagName("hsz").item(0).setTextContent(hsz);
+                System.out.println("TanarID " + tanarID + " lakcím módosítás: " + varos + ", " + utca + " " + hsz);
+            }
+        }
+    }
+
 }
