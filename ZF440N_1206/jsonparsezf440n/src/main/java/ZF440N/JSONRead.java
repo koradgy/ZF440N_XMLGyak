@@ -1,27 +1,56 @@
 package ZF440N;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import java.io.FileReader;
 
 public class JSONRead {
     public static void main(String[] args) {
-        JSONParser parser = new JSONParser();
+        try {
+            JSONParser parser = new JSONParser();
 
-        try (FileReader reader = new FileReader("kurzusfelvetelZF440N.json")) {
-            Object obj = parser.parse(reader);
+            Object obj = parser.parse(new FileReader("kurzusfelvetelZF440N.json"));
+
             JSONObject jsonObject = (JSONObject) obj;
-            OutputStreamWriter wr = new OutputStreamWriter(System.out, StandardCharsets.UTF_8);
-            wr.write(jsonObject.toString());
-            wr.flush();
-        } catch (IOException | ParseException e) {
+
+            displayJsonObject("", jsonObject);
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    private static void displayJsonObject(String prefix, JSONObject jsonObject) {
+        for (Object key : jsonObject.keySet()) {
+            String keyStr = (String) key;
+            Object value = jsonObject.get(keyStr);
+
+            if (value instanceof JSONObject) {
+                System.out.println(prefix + keyStr + ": ");
+                displayJsonObject(prefix + "  ", (JSONObject) value);
+            } else if (value instanceof JSONArray) {
+                System.out.println(prefix + keyStr + ": ");
+                displayJsonArray(prefix + "  ", (JSONArray) value);
+            } else {
+                System.out.println(prefix + keyStr + ": " + value);
+            }
+        }
+    }
+
+    private static void displayJsonArray(String prefix, JSONArray jsonArray) {
+        for (Object item : jsonArray) {
+            if (item instanceof JSONObject) {
+                displayJsonObject(prefix + "  ", (JSONObject) item);
+                System.out.println();
+            } else if (item instanceof JSONArray) {
+                displayJsonArray(prefix + "  ", (JSONArray) item);
+            } else {
+                System.out.println(prefix + "  " + item);
+            }
+        }
+    }
 }
+
+
+
